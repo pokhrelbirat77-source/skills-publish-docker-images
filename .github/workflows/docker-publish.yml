@@ -27,13 +27,11 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
-           context: .
-           push: true
-           platforms: linux/amd64,linux/arm64
-           tags: |
-             ghcr.io/pokhrelbirat77-source/skills-publish-docker-images/stackoverflown:main
-             ghcr.io/pokhrelbirat77-source/skills-publish-docker-images/stackoverflown:${{ github.sha }}
-        
-           run: |
-            docker build . --tag ghcr.io/pokhrelbirat77-source/skills-publish-docker-images/stackoverflown:main
-            docker push ghcr.io/pokhrelbirat77-source/skills-publish-docker-images/stackoverflown:main  
+          context: .
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: |
+           ghcr.io/pokhrelbirat77-source/skills-publish-docker-images/stackoverflown:main
+           ghcr.io/pokhrelbirat77-source/skills-publish-docker-images/stackoverflown:${{ github.sha }}
+
+       
